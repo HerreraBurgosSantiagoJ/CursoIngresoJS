@@ -3,11 +3,14 @@ function mostrar()
   var peso;
   var precio;
   var tipo;
+  var importe;
   var tipos="vam";
+  var cantidadVentas=0;
   var continuar=true;
 
   while(continuar)
   {
+    cantidadVentas++;
     peso=prompt('Ingrese el peso que lleva el cliente (mayor que 10 kg y menor a 1000 kg)');
     peso=parseInt(peso);
     while(isNaN(peso)||peso<10||peso>1000)
@@ -31,6 +34,11 @@ function mostrar()
         tipo=prompt('Error. El dato ingresado es incorrecto, lleva un producto de tipo vegetal,animal o mezcla("v", "a" o "m")?');
         tipo=tipo.toLowerCase();
     }
+
+    if(cantidadVentas==0)
+    {
+    }
+
     continuar=confirm("Desea continuar el ingreso de datos?");
   }
 }

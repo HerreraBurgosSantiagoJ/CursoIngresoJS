@@ -4,6 +4,12 @@ function mostrar()
   var tipo;
   var tipos="barbijojabónalcohol";
   var precio;
+  var marca;
+  var fabricante;
+  var barbijoCaroPrecio;
+  var barbijoCaroCantidad;
+  var barbijoCaroFabricante;
+  var flagPrimerBarbijo=true;
   var cantidadUnidades;
 
   for(var contador=0;contador<5;contador++)
@@ -33,6 +39,14 @@ function mostrar()
     }
     marca=prompt("");
     fabricante=prompt("");
+
+    if((flagPrimerBarbijo&&tipo=="barbijo")||barbijoCaroPrecio<precio)
+    {
+      barbijoCaroPrecio=precio;
+      barbijoCaroCantidad=cantidadUnidades;
+      barbijoCaroFabricante=fabricante;
+      flagPrimerBarbijo=false;
+    }
   }
 }
 /*Debemos realizar la carga de 5(cinco) productos de prevención de contagio,

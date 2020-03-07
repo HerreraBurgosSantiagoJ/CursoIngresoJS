@@ -22,15 +22,12 @@ function mifuncion()
       validarNumero=parseInt(validarNumero);
     }while(isNaN(validarNumero)||validarNumero<||validarNumero>)
 
-    if(flagBandera)
+    if(flagBandera||talCosa<talOtra)
     {
+      talCosa=talOtra;
       flagBandera=false;
     }
 
-    if(talCosa<talOtra)
-    {
-      talCosa=talOtra;
-    }
   }
   for(var contador;contador<;contador++)
   {
