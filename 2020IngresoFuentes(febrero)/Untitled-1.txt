@@ -1,0 +1,32 @@
+function mifuncion()
+{
+  var validarNumero;
+  var validarString;
+  var validarStrings="opcionesvalidadas";
+  var flagBandera=true;
+  var continuar=true;
+  var mensaje="";
+  while()
+  {
+    do
+    {
+      validarString=prompt('');
+      validarString=validarString.toLowerCase();
+    }while(validarStrings.indexOf(validarString)==-1)
+
+    do
+    {
+      validarNumero=prompt('');
+      validarNumero=parseInt(validarNumero);
+    }while(isNaN(validarNumero)||validarNumero<||validarNumero>)
+
+    if(flagBandera)
+    {
+      flagBandera=false;
+    }
+  }
+  for(var contador;contador<;contador++)
+  {
+  }
+  mensaje+="";
+}
