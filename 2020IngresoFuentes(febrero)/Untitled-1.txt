@@ -2,6 +2,8 @@ function mifuncion()
 {
   var validarNumero;
   var validarString;
+  var talCosa;
+  var talOtra;
   var validarStrings="opcionesvalidadas";
   var flagBandera=true;
   var continuar=true;
@@ -23,6 +25,11 @@ function mifuncion()
     if(flagBandera)
     {
       flagBandera=false;
+    }
+
+    if(talCosa<talOtra)
+    {
+      talCosa=talOtra;
     }
   }
   for(var contador;contador<;contador++)
