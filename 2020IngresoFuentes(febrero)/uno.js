@@ -4,11 +4,15 @@ function mostrar()
   var tipo;
   var tipos="barbijojabónalcohol";
   var precio;
+  var cantidadUnidades;
   var marca;
   var fabricante;
   var barbijoCaroPrecio;
   var barbijoCaroCantidad;
   var barbijoCaroFabricante;
+  var itemNumerosoCantidad;
+  var itemNumerosoFabricante;
+  var cantidadJabones=0;
   var flagPrimerBarbijo=true;
   var cantidadUnidades;
 
@@ -40,6 +44,12 @@ function mostrar()
     marca=prompt("");
     fabricante=prompt("");
 
+    if (contador==0||itemNumerosoCantidad<cantidadUnidades)
+    {
+      itemNumerosoCantidad=cantidadUnidades;
+      itemNumerosoFabricante=fabricante;
+    }
+
     if((flagPrimerBarbijo&&tipo=="barbijo")||barbijoCaroPrecio<precio)
     {
       barbijoCaroPrecio=precio;
@@ -47,15 +57,14 @@ function mostrar()
       barbijoCaroFabricante=fabricante;
       flagPrimerBarbijo=false;
     }
+
+    if (tipo=="jabón")
+    {
+      cantidadJabones++
+    }
   }
 }
-/*Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
-de cada una debo obtener los siguientes datos:
-el tipo (validar "barbijo" , "jabón" o "alcohol") ,
-el precio (validar entre 100 y 300),
-la cantidad de unidades (no puede ser 0 o negativo y no debe superar las 1000 unidades),
-la Marca y el fabricante.
-Se debe Informar al usuario lo siguiente:
+/*
 a) Del más caro de los Barbijos, la cantidad de unidades y el fabricante
 b) Del ítem con más unidades, el fabricante
 c) Cuántas unidades de jabones hay en total*/

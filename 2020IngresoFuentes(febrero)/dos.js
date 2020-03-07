@@ -4,13 +4,17 @@ function mostrar()
   var precio;
   var tipo;
   var importe;
+  var descuento;
+  var alimentoCaroPrecio;
+  var alimentoCaroTipo;
+  var promedioPrecio=0;
   var tipos="vam";
   var cantidadVentas=0;
   var continuar=true;
+  var mensaje;
 
   while(continuar)
   {
-    cantidadVentas++;
     peso=prompt('Ingrese el peso que lleva el cliente (mayor que 10 kg y menor a 1000 kg)');
     peso=parseInt(peso);
     while(isNaN(peso)||peso<10||peso>1000)
@@ -35,12 +39,44 @@ function mostrar()
         tipo=tipo.toLowerCase();
     }
 
-    if(cantidadVentas==0)
+    if(cantidadVentas==0||alimentoCaroPrecio<precio)
     {
+      alimentoCaroPrecio=precio;
+      alimentoCaroTipo=tipo;
     }
 
+    mensaje="";
+    importe=peso*precio;
+    mensaje+="El importe total a pagar es de "
+    if (peso>100)
+    {
+      if (peso>300)
+      {
+        descuento=0.75;
+      }
+      else
+      {
+        descuento=0.85;
+      }
+      importe*=descuento;
+      descuento=importe-peso*precio;
+      mensaje+=importe+" pesos con un descuento de "+descuento+" pesos.";
+    }
+    else
+    {
+      mensaje+=importe+" pesos.";
+    }
+
+    alert(mensaje)
+
+    promedioPrecio+=precio;
+    cantidadVentas++;
+    descuento=1;
     continuar=confirm("Desea continuar el ingreso de datos?");
   }
+  promedioPrecio/=cantidadVentas;
+  mensaje="El tipo de alimento mas caro es "+alimentoCaroTipo+".\nEl promedio de precio por kilo en total es de "+promedioPrecio+" pesos.";
+  alert(mensaje);
 }
 /*Realizar el algoritmo que permita ingresar los datos de una compra de ingredientes para preparar comida al por mayor , hasta que el cliente quiera:
 peso (entre 10 y 1000)en kilo,
